@@ -9,8 +9,10 @@ import { ProductosComponent } from './productos/productos.component';
 import { CategoriasComponent } from './categorias/categorias.component';
 
 const appRoutes: Routes = [
-  { path: 'crisis-center', component: CrisisListComponent },
-  { path: '**', component: PageNotFoundComponent }
+  { path: '', component: HomeComponent },
+  { path: 'Categorias', component: CategoriasComponent },
+  { path: 'Productos', component: ProductosComponent },
+  //{ path: '**', component: PageNotFoundComponent }
 ];
 
 @NgModule({
