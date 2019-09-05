@@ -10,8 +10,5 @@ li {
     align-items: center;
 }
 .face img{
-    width: 50%;
-}
-.face{
-    align-content: center;
+    width: 25%;
 }
