@@ -4,3 +4,14 @@
 .right{
     float: right;
 }
+li {
+    padding: 10px 15px;
+    margin: 1px 1px;
+    align-items: center;
+}
+.face img{
+    width: 50%;
+}
+.face{
+    align-content: center;
+}
