@@ -8,6 +8,7 @@ import { HomeComponent } from './views/home/home.component';
 import { ProductosComponent } from './views/productos/productos.component';
 import { CategoriasComponent } from './views/categorias/categorias.component';
 import { PageNotFoundComponent } from './views/page-not-found/page-not-found.component';
+import { AngularFontAwesomeModule } from 'angular-font-awesome';
 
 
 @NgModule({
@@ -21,6 +22,7 @@ import { PageNotFoundComponent } from './views/page-not-found/page-not-found.com
   imports: [
     BrowserModule,
     AppRoutingModule,
+    AngularFontAwesomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]
