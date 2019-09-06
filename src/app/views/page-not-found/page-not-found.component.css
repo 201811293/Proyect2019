@@ -60,36 +60,11 @@
     font-size: 22px;
     font-weight: 700;
     text-transform: uppercase;
-    color: #fff;
+    color: #D7D7D7;
     margin-top: 20px;
     margin-bottom: 15px;
   }
-  
-  .notfound .home-btn {
-    font-family: 'Montserrat', sans-serif;
-    display: inline-block;
-    font-weight: 700;
-    text-decoration: none;
-    background-color: transparent;
-    border: 2px solid transparent;
-    text-transform: uppercase;
-    padding: 13px 25px;
-    font-size: 18px;
-    border-radius: 40px;
-    margin: 7px;
-    -webkit-transition: 0.2s all;
-    transition: 0.2s all;
-  }
-  
-  .notfound .home-btn:hover{
-    opacity: 0.9;
-  }
-  
-  .notfound .home-btn {
-    color: #282828;
-    background: #fff;
-  }
-  
+
   @media only screen and (max-width: 767px) {
     .notfound .notfound-404 h1 {
       font-size: 182px;
