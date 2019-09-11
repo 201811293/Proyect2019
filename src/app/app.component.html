@@ -1,7 +1,7 @@
 <div class="header">
     <nav class="navbar navbar-icon-top navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
-                <a class="navbar-brand" href="#" id="lo">
+                <a class="navbar-brand" href="/" id="lo">
                     <img src="../assets/logo.png" alt="" id="logo">
                 </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -10,55 +10,98 @@
             
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="#">
-                    <i class="fa fa-home"></i>
-                    Inicio
-                    <span class="sr-only">(current)</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link disabled" href="#">
-                    <i class="fa fa-envelope-o">
-                        <span class="badge badge-warning">11</span>
-                    </i>
-                    Productos
-                    </a>
-                </li>
-                <li>
-                    
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">
-                    <i class="fa fa-envelope-o">
-                        <span class="badge badge-danger">11</span>
-                    </i>
-                    Categorias
-                    </a>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <i class="fa fa-envelope-o">
-                        <span class="badge badge-primary">11</span>
-                    </i>
-                    TOP
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="#">Action</a>
-                    <a class="dropdown-item" href="#">Another action</a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#">Something else here</a>
+                    <div class="asd">
+                        <li class="nav-item">
+                            <a class="nav-link " href="#">
+                                <i class="fa fa-product-hunt">
+                                </i>
+                                Recientes
+                            </a>
+                        </li>
                     </div>
-                </li>
+                    <div class="asd">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                <i class="fa fa-list">
+                                </i>
+                                Categorias
+                            </a>
+                        </li>
+                    </div>
+                    <div class="asd">
+                        <li class="nav-item ">
+                            <a class="nav-link " href="#" >
+                                <i class="fa fa-star" aria-hidden="true">
+                                </i>
+                                TOP
+                            </a>
+                        </li>
+                    </div>
+                    <div class="asd">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link" href="#" >
+                                <i class="fa fa-random" aria-hidden="true">
+                                </i>
+                                Ramdon
+                            </a>
+                        </li>
+                    </div>
+                    <div class="asd">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link" href="#" >
+                                <i class="fa fa-comment" aria-hidden="true">
+                                </i>
+                                Sugerencias
+                            </a>
+                        </li>
+                    </div>
                 </ul>
                 <form class="form-inline my-2 my-lg-0">
-                    <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                    <div class="asd">
+                        <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+                    </div>
+                    <div class="asd">
+                        <button class="btn btn-secondary my-2 my-sm-0" type="submit">Buscar</button>
+                    </div>
                 </form>
+                <ul class="nav navbar-nav flex-row justify-content-between ml-auto">
+                    <div class="asd">
+                        <li class="dropdown order-1">
+                            <button type="button" id="dropdownMenu1" data-toggle="dropdown" class="btn btn-outline-secondary dropdown-toggle">
+                                <i class="fa fa-user" aria-hidden="true"></i>
+                                Login 
+                                <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu dropdown-menu-right mt-1 ">
+                                <li class="px-1 py-1">
+                                    <form class="form" role="form">
+                                        <div class="form-group">
+                                            <input id="userInput" placeholder="User" class="form-control form-control-sm" type="text" required maxlength="15">
+                                        </div>
+                                        <div class="form-group">
+                                            <input id="passwordInput" placeholder="Password" class="form-control form-control-sm" type="text" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <button type="submit" class="btn btn-secondary btn-block">Login</button>
+                                        </div>
+                                        <div class="form-group">
+                                            <button type="submit" class="btn btn-primary btn-block">Facebook</button>
+                                        </div>
+                                        <div class="form-group text-center">
+                                            <small><a href="#" data-toggle="modal" data-target="#modalPassword">Olvidaste tu contraseña?</a></small>
+                                        </div>
+                                        <div class="form-group text-center">
+                                            <small><a href="#" data-toggle="modal" data-target="#register">Register</a></small>
+                                        </div>
+                                    </form>
+                                </li>
+                            </ul>
+                        </li>
+                    </div>
+                </ul>
             </div>
         </div>    
     </nav>
-    
 </div>
 
 <div class="cuerpo">
