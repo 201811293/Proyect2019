@@ -9,7 +9,14 @@
     margin-left: -8px;
     
   }
-  
+  #robot{
+    width: 100px;
+    height: 180px;
+    position: absolute;
+    z-index: 1;
+    margin-top: 455px;
+    margin-left: 46%;
+  }
   #notfound .notfound-bg:after {
     content: '';
     position: absolute;
@@ -36,7 +43,7 @@
   
   .notfound .notfound-404 {
     position: relative;
-    height: 200px;
+    height: 160px;
   }
   
   .notfound .notfound-404 h1 {
