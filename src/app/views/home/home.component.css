@@ -1,5 +1,6 @@
 .producto{
-    flex: 350px;
+	flex: 350px;
+	margin-left: 1%;
 }
 .lista-productos{
 	width: 98%;
@@ -12,6 +13,13 @@
 	transform: scale(0.9);
 }
 #ca{
-    margin: auto;
-    width: 900px;
+	margin: auto;
+	margin-top: 2%;
+	width: 70%;
+	
+}
+.titulo-productos {margin: auto;}
+
+.row{
+	width: 100%;
 }
