@@ -10,12 +10,9 @@
     
   }
   #robot{
-    width: 100px;
     height: 180px;
-    position: absolute;
-    z-index: 1;
-    margin-top: 455px;
-    margin-left: 46%;
+
+    
   }
   #notfound .notfound-bg:after {
     content: '';
