@@ -2,14 +2,17 @@
     <div class="container">
       <div class="row">
   
-        <div class="col-xs-12 col-sm-6 col-md-4 mx-auto">
+        <div class="col-6 col-xs-7 col-sm-7 col-md-7 mx-auto">
           <div class="card_register">
             <div class="card">
               <div class="card-body text-center">
-                <form #formRegister="ngForm" (ngSubmit)="onAddUser()">
+                <form (ngSubmit)="onAddUser(f)" #f="ngForm">
                   <h1 class="h3 mb-3 font-weight-normal">Register</h1>
                   <div class="alert alert-danger" role="alert" *ngIf="isError">
                     {{msgError}}
+                  </div>
+                  <div class="form-group">
+                    <input type="text" class="form-control" id="name" [(ngModel)]='name' name="name">
                   </div>
                   <div class="form-group">
                     <input type="email" name="email" class="form-control" placeholder="Email" [(ngModel)]="email" required minlength="8">

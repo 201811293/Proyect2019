@@ -1,104 +1,104 @@
 <nav class="navbar navbar-icon-top navbar-expand-lg navbar-dark bg-dark">
-        <div class="container" id="dada">
-                <a class="navbar-brand" href="/" id="lo">
-                    <img src="../assets/logo.png" alt="" id="logo">
-                </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            
-            <div class="collapse navbar-collapse" id="navbarSupportedContent" style="margin-left: 35px;">
-                <ul class="navbar-nav mr-auto">
-                    <div class="asd">
-                        <li class="nav-item">
-                            <a class="nav-link " href="#">
-                                <i class="fa fa-product-hunt">
-                                </i>
-                                Recientes
-                            </a>
-                        </li>
-                    </div>
-                    <div class="asd">
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">
-                                <i class="fa fa-list">
-                                </i>
-                                Categorias
-                            </a>
-                        </li>
-                    </div>
-                    <div class="asd">
-                        <li class="nav-item ">
-                            <a class="nav-link " href="#" >
-                                <i class="fa fa-star" aria-hidden="true">
-                                </i>
-                                TOP
-                            </a>
-                        </li>
-                    </div>
-                    <div class="asd">
-                        <li class="nav-item dropdown">
-                            <a class="nav-link" href="#" >
-                                <i class="fa fa-random" aria-hidden="true">
-                                </i>
-                                Ramdon
-                            </a>
-                        </li>
-                    </div>
-                    
-                </ul>
-                <form class="form-inline my-2 my-lg-0">
-                    <div class="asd">
-                        <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-                    </div>
-                    <div class="asd">
-                        <button class="btn btn-secondary my-2 my-sm-0" type="submit">
-                            <i class="fa fa-search" aria-hidden="true"></i>
-                        </button>
-                    </div>
-                </form>
-                <ul class="nav navbar-nav d-flex ml-auto">
-                    <div class="asd">
-                        <li class="dropdown order-1  p-2" *ngIf="!isLogged">
-                            <a href="/user/login">
-                                <button type="button" class="btn btn-secondary ">
-                                    <i class="fa fa-user"></i>
-                                    Login 
-                                </button>
-                            </a>
-                        </li>
-                    </div>
-                    <div class="asd">
-                        <li class="dropdown order-1 ml-auto p-2" *ngIf="!isLogged">
-                            <a href="/user/register">
-                                <button type="button" class="btn btn-secondary ">
-                                    <i class="fa fa-user-o" aria-hidden="true"></i>
-                                    Register
-                                </button>
-                            </a>
-                        </li>
-                    </div>
-                    <div class="asd">
-                        <li class="dropdown order-1 ml-auto p-2" *ngIf="isLogged">
-                            <a href="/">
-                                <button type="button" class="btn btn-secondary ">
-                                        <i href="#" class="fa fa-power-off" (click)="onLogout()"> Salir
-                                            </i>
-                                </button>
-                            </a>
-                        </li>
-                    </div>
-                    <div class="asd">
-                        <li class="dropdown order-1 ml-auto p-2" *ngIf="isLogged">
-                            <a href="/user/profile">
-                                <button type="button" class="btn btn-secondary ">
-                                        <i  class="fa fa-home"> Perfil
+    <div class="container" id="dada">
+            <a class="navbar-brand" href="/" id="lo">
+                <img src="../assets/logo.png" alt="" id="logo">
+            </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        
+        <div class="collapse navbar-collapse" id="navbarSupportedContent" style="margin-left: 35px;">
+            <ul class="navbar-nav mr-auto">
+                <div class="asd">
+                    <li class="nav-item">
+                        <a class="nav-link " href="#">
+                            <i class="fa fa-product-hunt">
+                            </i>
+                            Recientes
+                        </a>
+                    </li>
+                </div>
+                <div class="asd">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <i class="fa fa-list">
+                            </i>
+                            Categorias
+                        </a>
+                    </li>
+                </div>
+                <div class="asd">
+                    <li class="nav-item ">
+                        <a class="nav-link " href="#" >
+                            <i class="fa fa-star" aria-hidden="true">
+                            </i>
+                            TOP
+                        </a>
+                    </li>
+                </div>
+                <div class="asd">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link" href="#" >
+                            <i class="fa fa-random" aria-hidden="true">
+                            </i>
+                            Ramdon
+                        </a>
+                    </li>
+                </div>
+                
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+                <div class="asd">
+                    <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+                </div>
+                <div class="asd">
+                    <button class="btn btn-secondary my-2 my-sm-0" type="submit">
+                        <i class="fa fa-search" aria-hidden="true"></i>
+                    </button>
+                </div>
+            </form>
+            <ul class="nav navbar-nav d-flex ml-auto">
+                <div class="asd">
+                    <li class="dropdown order-1  p-2" *ngIf="!isLogged">
+                        <a href="/user/login">
+                            <button type="button" class="btn btn-secondary ">
+                                <i class="fa fa-user"></i>
+                                Login 
+                            </button>
+                        </a>
+                    </li>
+                </div>
+                <div class="asd">
+                    <li class="dropdown order-1 ml-auto p-2" *ngIf="!isLogged">
+                        <a href="/user/register">
+                            <button type="button" class="btn btn-secondary ">
+                                <i class="fa fa-user-o" aria-hidden="true"></i>
+                                Register
+                            </button>
+                        </a>
+                    </li>
+                </div>
+                <div class="asd">
+                    <li class="dropdown order-1 ml-auto p-2" *ngIf="isLogged">
+                        <a href="/user/profile">
+                            <button type="button" class="btn btn-secondary ">
+                                    <i  class="fa fa-home"> Perfil
+                                    </i>
+                            </button>
+                        </a>
+                    </li>
+                </div>
+                <div class="asd">
+                    <li class="dropdown order-1 ml-auto p-2" *ngIf="isLogged">
+                        <a href="/">
+                            <button type="button" class="btn btn-secondary ">
+                                    <i href="#" class="fa fa-power-off" (click)="onLogout()"> Salir
                                         </i>
-                                </button>
-                            </a>
-                        </li>
-                    </div>
-                </ul>
-            </div>
-        </div>    
-    </nav>
+                            </button>
+                        </a>
+                    </li>
+                </div>
+            </ul>
+        </div>
+    </div>    
+</nav>

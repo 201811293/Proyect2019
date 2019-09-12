@@ -5,6 +5,7 @@ import {AngularFireStorage } from '@angular/fire/storage';
 import {AuthService} from '../../services/auth.service'
 import { Observable } from 'rxjs/internal/Observable';
 import { finalize } from 'rxjs/operators';
+import { NgForm } from '@angular/forms';
 
 
 @Component({
@@ -18,8 +19,7 @@ export class RegisterComponent implements OnInit {
   
   @ViewChild('imageUser',{static:true}) inputImageUser: ElementRef;
   
-  public email: string="";
-  public password: string="";
+
 
 
   uploadPercent: Observable<number>;
@@ -27,16 +27,22 @@ export class RegisterComponent implements OnInit {
 
   ngOnInit() {
   }
-  onAddUser(){
-    this.authService.registerUser(this.email,this.password)
+  onAddUser(form: NgForm){
+    
+    const name = form.value.name;
+    const password = form.value.password;
+    const email = form.value.email;
+
+    this.authService.registerUser(email,password)
     .then((res)=>{
       this.authService.isAuth().subscribe(user =>{
         if(user){
           user.updateProfile({
-            displayName: '',
+            displayName: name,
             photoURL:this.inputImageUser.nativeElement.value
           }).then(function(){
             console.log('user UPDATE');
+            console.log('user',name);
           }).catch(function(error){
             console.log('eeror',error);
           });
@@ -46,8 +52,11 @@ export class RegisterComponent implements OnInit {
     }).catch(err=> console.log('err',err.message));
   }
 
-  onLogin(): void{
-    this.authService.loginEmailUser(this.email, this.password)
+  onLogin(form: NgForm): void{
+    const password = form.value.password;
+    const email = form.value.email;
+
+    this.authService.loginEmailUser(email, password)
     .then((res)=>{
       this.onLoginRedirect();
     }).catch(err=>console.log('err',err.message));
