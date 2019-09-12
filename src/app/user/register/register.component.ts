@@ -42,7 +42,7 @@ export class RegisterComponent implements OnInit {
           });
         }
       });
-      //this.router.navigate(['/']);
+      this.router.navigate(['/']);
     }).catch(err=> console.log('err',err.message));
   }
 
