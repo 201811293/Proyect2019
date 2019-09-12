@@ -1,8 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { Router } from '@angular/router';
-
+import {AngularFireStorage } from '@angular/fire/storage';
 import {AuthService} from '../../services/auth.service'
+import { Observable } from 'rxjs/internal/Observable';
+import { finalize } from 'rxjs/operators';
 
 
 @Component({
@@ -12,15 +14,35 @@ import {AuthService} from '../../services/auth.service'
 })
 export class RegisterComponent implements OnInit {
 
-  constructor(private router:Router,private authService:AuthService) { }
+  constructor(private router:Router,private authService:AuthService, private storage:AngularFireStorage) { }
+  
+  @ViewChild('imageUser',{static:true}) inputImageUser: ElementRef;
+  
   public email: string="";
   public password: string="";
+
+
+  uploadPercent: Observable<number>;
+  urlImage: Observable<string>;
+
   ngOnInit() {
   }
   onAddUser(){
     this.authService.registerUser(this.email,this.password)
     .then((res)=>{
-      this.router.navigate(['/']);
+      this.authService.isAuth().subscribe(user =>{
+        if(user){
+          user.updateProfile({
+            displayName: '',
+            photoURL:this.inputImageUser.nativeElement.value
+          }).then(function(){
+            console.log('user UPDATE');
+          }).catch(function(error){
+            console.log('eeror',error);
+          });
+        }
+      });
+      //this.router.navigate(['/']);
     }).catch(err=> console.log('err',err.message));
   }
 
@@ -49,6 +71,13 @@ export class RegisterComponent implements OnInit {
 
 
   onUpload(e){
-    console.log('subir',e.target.files[0]);
+    const id= Math.random().toString(36).substring(2);
+    const file = e.target.files[0];
+    const filePath = `uploads/profile_${id}`;
+    const ref= this.storage.ref(filePath);
+    const task = this.storage.upload(filePath,file)
+    this.uploadPercent = task.percentageChanges();
+    task.snapshotChanges().pipe(finalize(()=> this.urlImage = ref.getDownloadURL() )).subscribe();
+
   }
 }

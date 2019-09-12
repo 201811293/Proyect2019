@@ -21,7 +21,7 @@ import { environment } from '../environments/environment';
 import { AngularFireModule} from '@angular/fire';
 import { AngularFireDatabaseModule, AngularFireDatabase} from '@angular/fire/database';
 import { AngularFireAuth } from '@angular/fire/auth';
-import { auth } from 'firebase/app';
+import { AngularFireStorageModule } from '@angular/fire/storage';
 
 
 @NgModule({
@@ -44,7 +44,8 @@ import { auth } from 'firebase/app';
     AngularFontAwesomeModule,
     FormsModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
-    AngularFireDatabaseModule
+    AngularFireDatabaseModule,
+    AngularFireStorageModule
   ],
   providers: [AngularFireAuth],
   bootstrap: [AppComponent]
