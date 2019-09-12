@@ -17,7 +17,11 @@ import { LoginComponent } from './user/login/login.component';
 import { NavbarComponent } from './navbar/navbar.component';
 
 import { FormsModule } from '@angular/forms';
-
+import { environment } from '../environments/environment';
+import { AngularFireModule} from '@angular/fire';
+import { AngularFireDatabaseModule, AngularFireDatabase} from '@angular/fire/database';
+import { AngularFireAuth } from '@angular/fire/auth';
+import { auth } from 'firebase/app';
 
 
 @NgModule({
@@ -38,9 +42,11 @@ import { FormsModule } from '@angular/forms';
     BrowserModule,
     AppRoutingModule,
     AngularFontAwesomeModule,
-    FormsModule
+    FormsModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFireDatabaseModule
   ],
-  providers: [],
+  providers: [AngularFireAuth],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
