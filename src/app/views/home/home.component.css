@@ -1,0 +1,17 @@
+.producto{
+    flex: 350px;
+}
+.lista-productos{
+	width: 98%;
+	display: flex;
+	flex-flow: row wrap;
+	margin: 0 auto;
+	margin-top: 10px;
+}
+.imagenp{
+	transform: scale(0.9);
+}
+#ca{
+    margin: auto;
+    width: 900px;
+}
