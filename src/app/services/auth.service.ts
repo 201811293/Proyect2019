@@ -12,13 +12,19 @@ export class AuthService {
   constructor(private afsAuth: AngularFireAuth,
     private router: Router) { }
 
-  registerUser(){}
+  registerUser(email:string, pass:string){
+    return new Promise((resolve, reject)=>{
+      this.afsAuth.auth.createUserWithEmailAndPassword(email, pass)
+      .then( userData => resolve(userData)),
+      err=> reject(err);
+    })
+  }
   loginEmailUser(email:string, pass:string){
     return new Promise((resolve, reject) =>{
-      this,this.afsAuth.auth.signInWithEmailAndPassword(email,pass)
+      this.afsAuth.auth.signInWithEmailAndPassword(email,pass)
       .then(userData => resolve(userData),
       err => reject(err)
-      )
+      );
     })
   }
 

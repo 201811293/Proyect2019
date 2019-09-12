@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
-import { auth } from 'firebase/app';
 import { Router } from '@angular/router';
 
 import {AuthService} from '../../services/auth.service'
@@ -26,14 +25,14 @@ export class LoginComponent implements OnInit {
   onLogin(): void{
     this.authService.loginEmailUser(this.email, this.password)
     .then((res)=>{
-      this.router.navigate(['/'])
+      this.onLoginRedirect();
     }).catch(err=>console.log('err',err.message));
   }
 
   onLoginGoogle(): void{
     this.authService.loginGoogleUser()
     .then((res)=>{
-      this.router.navigate(['/'])
+      this.onLoginRedirect();
     }).catch(err=>console.log('err',err.message));
   }
   onLogout(){
@@ -42,9 +41,12 @@ export class LoginComponent implements OnInit {
   onLoginFacebook(): void{
     this.authService.loginFacebookUser()
     .then((res)=>{
-      this.router.navigate(['/'])
+      this.onLoginRedirect();
     }).catch(err=>console.log('err',err.message));
 
   }
 
+  onLoginRedirect(): void{
+    this.router.navigate(['/'])
+  }
 }
