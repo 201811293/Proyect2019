@@ -4,7 +4,7 @@ export interface User {
     email?: string;
     password?: string
     photoUrl?: string;
-    fecha_inicio?: string;
+    fecha_creado?: string;
     roles: Roles;
     
 }

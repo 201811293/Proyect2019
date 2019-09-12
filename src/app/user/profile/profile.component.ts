@@ -14,6 +14,7 @@ export class ProfileComponent implements OnInit {
     name:'',
     email:'',
     photoUrl:'',
+    fecha_creado: '',
     roles: {}
   };
 
@@ -24,6 +25,7 @@ export class ProfileComponent implements OnInit {
         this.user.name = user.displayName;
         this.user.email = user.email;
         this.user.photoUrl = user.photoURL;
+        this.user.fecha_creado = user.metadata.creationTime;
         this.providerId = user.providerData[0].providerId;
         console.log('user',user)
       }

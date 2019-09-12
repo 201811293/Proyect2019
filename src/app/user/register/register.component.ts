@@ -28,7 +28,7 @@ export class RegisterComponent implements OnInit {
   ngOnInit() {
   }
   onAddUser(form: NgForm){
-    
+    const date = form.value.date;
     const name = form.value.name;
     const password = form.value.password;
     const email = form.value.email;
@@ -38,11 +38,12 @@ export class RegisterComponent implements OnInit {
       this.authService.isAuth().subscribe(user =>{
         if(user){
           user.updateProfile({
+            date: date,
             displayName: name,
             photoURL:this.inputImageUser.nativeElement.value
           }).then(function(){
             console.log('user UPDATE');
-            console.log('user',name);
+            console.log('fec',date);
           }).catch(function(error){
             console.log('eeror',error);
           });
@@ -77,7 +78,7 @@ export class RegisterComponent implements OnInit {
   onLoginRedirect(): void{
     this.router.navigate(['/'])
   }
-
+  
 
   onUpload(e){
     const id= Math.random().toString(36).substring(2);
