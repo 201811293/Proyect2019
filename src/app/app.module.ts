@@ -14,6 +14,10 @@ import { ProfileComponent } from './user/profile/profile.component';
 import { ListWallpaperComponent } from './admin/list-wallpaper/list-wallpaper.component';
 import { DetailsWallpapperComponent } from './views/details-wallpapper/details-wallpapper.component';
 import { LoginComponent } from './user/login/login.component';
+import { NavbarComponent } from './navbar/navbar.component';
+
+import { FormsModule } from '@angular/forms';
+
 
 
 @NgModule({
@@ -27,12 +31,14 @@ import { LoginComponent } from './user/login/login.component';
     ProfileComponent,
     ListWallpaperComponent,
     DetailsWallpapperComponent,
-    LoginComponent
+    LoginComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    AngularFontAwesomeModule
+    AngularFontAwesomeModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
