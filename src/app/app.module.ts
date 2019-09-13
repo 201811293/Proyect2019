@@ -23,6 +23,8 @@ import { AngularFireDatabaseModule, AngularFireDatabase} from '@angular/fire/dat
 import { AngularFireAuth } from '@angular/fire/auth';
 import { AngularFireStorageModule } from '@angular/fire/storage';
 
+import { AngularFirestore } from '@angular/fire/firestore';
+
 
 @NgModule({
   declarations: [
@@ -47,7 +49,7 @@ import { AngularFireStorageModule } from '@angular/fire/storage';
     AngularFireDatabaseModule,
     AngularFireStorageModule
   ],
-  providers: [AngularFireAuth],
+  providers: [AngularFireAuth, AngularFirestore],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

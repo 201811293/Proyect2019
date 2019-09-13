@@ -21,7 +21,7 @@ const routes: Routes = [
   {path:'user/profile',component:ProfileComponent},
   {path:'user/login',component:LoginComponent},
   {path:'admin/list-wall',component:ListWallpaperComponent},
-  {path:'wallpaper:/id',component:DetailsWallpapperComponent},
+  {path:'wallpapper/:id',component:DetailsWallpapperComponent},
   {path:'**',component:PageNotFoundComponent},
 ];
 
