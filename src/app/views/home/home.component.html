@@ -1,14 +1,14 @@
 <section id="products" class="mt-5">
     <div class="container">
       <div class="row">
-        <div class="col-xs-12 col-sm-6 col-md-4" *ngFor="let d of products">
+        <div class="col-xs-12 col-sm-6 col-md-4" *ngFor="let d of products; index as productId">
           <div class="card_book">
             <div class="card">
               <div class="card-body text-center">
                 <p>
-                  <img class="img-fluid" src="{{d.imagen}}" alt="{{d.titulo}}">
+                  <img class="img-fluid" src="{{d.imagen}}" alt="{{d.titulo}}" [routerLink] ="['/wallpapper',d.id]">
                 </p>
-                <h4 routerLink="/wallpapper/{{d.id}}" class="card-title">{{d.titulo}}</h4>
+                <h4  class="card-title">{{d.name}}</h4>
                 <p class="card-text">
                   {{d.descripcion }}
                 </p>

@@ -9,18 +9,22 @@ import { ActivatedRoute, Params } from '@angular/router';
   styleUrls: ['./details-wallpapper.component.css']
 })
 export class DetailsWallpapperComponent implements OnInit {
-
+  producto;
   constructor(private dataApi: DataApiService, private route: ActivatedRoute) { }
-  public product: Producto = {};
+  public product: Producto;
 
   ngOnInit() {
-    const idProduct = this.route.snapshot.params['id'];
-    this.getDetails(idProduct);
+    this.route.paramMap.subscribe(params => {
+      this.producto = this.product[+params.get('id')];
+   
+    });
+    
   }
 
   getDetails(idProduct: string): void {
-    this.dataApi.getOneProduct(idProduct).subscribe(product => {
-      console.log('detalles product', product)
-    });
+    //console.log('detalles product', idProduct)
+    //this.dataApi.getOneProduct(idProduct).subscribe(product => {
+      
+    //});
   }
 }

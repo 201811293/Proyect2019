@@ -14,8 +14,9 @@ export class HomeComponent implements OnInit {
   public product = '';
   ngOnInit() {
     this.dataApi.getAllProduct().subscribe(products => {
-      console.log('products', products);
+      
       this.products = products;
+      console.log('products', this.products);
     })
   }
 
