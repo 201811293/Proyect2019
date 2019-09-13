@@ -2,7 +2,7 @@ import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { Router } from '@angular/router';
 import {AngularFireStorage } from '@angular/fire/storage';
-import {AuthService} from '../../services/auth.service';
+import {AuthService} from '../../services/auth.service'
 import { Observable } from 'rxjs/internal/Observable';
 import { finalize } from 'rxjs/operators';
 import { NgForm } from '@angular/forms';
@@ -38,7 +38,7 @@ export class RegisterComponent implements OnInit {
       this.authService.isAuth().subscribe(user =>{
         if(user){
           user.updateProfile({
-            date: date,
+      
             displayName: name,
             photoURL:this.inputImageUser.nativeElement.value
           }).then(function(){
