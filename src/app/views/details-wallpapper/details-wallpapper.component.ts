@@ -15,7 +15,8 @@ export class DetailsWallpapperComponent implements OnInit {
 
   ngOnInit() {
     this.route.paramMap.subscribe(params => {
-      this.producto = this.product[+params.get('id')];
+      this.producto = this.product[params.get('id')];
+      console.log( 'id', id);
    
     });
     
