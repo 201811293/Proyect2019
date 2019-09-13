@@ -9,20 +9,19 @@ import { map } from 'rxjs/operators';
 })
 export class DataApiService {
 
-  constructor(private afs: AngularFirestore) { 
-    this.productsCollection = afs.collection<Producto>('wallpappers')
-    this.products = this.productsCollection.valueChanges();
-
-  }
-
+  constructor(private afs: AngularFirestore) { }
   private productsCollection: AngularFirestoreCollection<Producto>;
   private products: Observable<Producto[]>;
   private productDoc: AngularFirestoreDocument<Producto>;
   private product: Observable<Producto>;
+  public selectedProduct: Producto = {
+    id: null
+  };
+
 
   getAllProduct(){
-    return this.products = this.productsCollection.snapshotChanges()
-    .pipe(map(changes => {
+    this.productsCollection = this.afs.collection<Producto>('wallpappers')
+    return this.products = this.productsCollection.snapshotChanges().pipe(map(changes => {
       return changes.map(action => {
         const data = action.payload.doc.data() as Producto;
         data.id = action.payload.doc.id;
@@ -31,7 +30,7 @@ export class DataApiService {
     }));
   }
   getOneProduct(idProduct: string){
-    this.productDoc = this.afs.doc<Producto>(`wallpapper/${idProduct}`);
+    this.productDoc = this.afs.doc<Producto>('wallpapper/${idProduct}');
     return this.product = this.productDoc.snapshotChanges().pipe(map(action => {
       if (action.payload.exists === false) {
         return null;

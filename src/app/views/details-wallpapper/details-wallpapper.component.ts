@@ -19,8 +19,8 @@ export class DetailsWallpapperComponent implements OnInit {
   }
 
   getDetails(idProduct: string): void {
-    this.dataApi.getOneBook(idProduct).subscribe(book => {
-      this.book = book;
+    this.dataApi.getOneProduct(idProduct).subscribe(product => {
+      console.log('detalles product', product)
     });
   }
 }
