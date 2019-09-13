@@ -30,18 +30,17 @@ export class DataApiService {
       });
     }));
   }
-  getOneProduct(idProduct: String){
+  getOneProduct(idProduct: string){
     this.productDoc = this.afs.doc<Producto>(`wallpapper/${idProduct}`);
-    return this.product = this.productDoc.snapshotChanges().pipe(map(action =>{
-      if(action.payload.exists == false){
+    return this.product = this.productDoc.snapshotChanges().pipe(map(action => {
+      if (action.payload.exists === false) {
         return null;
-      }else{
+      } else {
         const data = action.payload.data() as Producto;
         data.id = action.payload.id;
         return data;
       }
     }));
-
   }
   addProduct(){
 

@@ -15,13 +15,14 @@ import { LoginComponent } from './user/login/login.component';
 
 const routes: Routes = [
   {path:'',component:HomeComponent},
+  {path:'wallpapper/:id',component:DetailsWallpapperComponent},
   {path:'productos',component:ProductosComponent},
   {path:'categorias',component:CategoriasComponent},
   {path:'user/register',component:RegisterComponent},
   {path:'user/profile',component:ProfileComponent},
   {path:'user/login',component:LoginComponent},
   {path:'admin/list-wall',component:ListWallpaperComponent},
-  {path:'wallpapper/:id',component:DetailsWallpapperComponent},
+  
   {path:'**',component:PageNotFoundComponent},
 ];
 

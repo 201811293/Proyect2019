@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DataApiService } from '../../services/data-api.service';
 import { Producto } from '../../models/producto';
+import { ActivatedRoute, Params } from '@angular/router';
 
 @Component({
   selector: 'app-details-wallpapper',
@@ -9,13 +10,17 @@ import { Producto } from '../../models/producto';
 })
 export class DetailsWallpapperComponent implements OnInit {
 
-  constructor(private dataApi: DataApiService) { }
-  public product: Producto;
+  constructor(private dataApi: DataApiService, private route: ActivatedRoute) { }
+  public product: Producto = {};
+
   ngOnInit() {
-    const idProduct = 'zZhScPQ89jWVB3sB4uef';
-    this.dataApi.getOneProduct(idProduct).subscribe( product =>{
-      console.log(product);
-    })
+    const idProduct = this.route.snapshot.params['id'];
+    this.getDetails(idProduct);
   }
 
+  getDetails(idProduct: string): void {
+    this.dataApi.getOneBook(idProduct).subscribe(book => {
+      this.book = book;
+    });
+  }
 }
